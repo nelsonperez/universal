@@ -236,9 +236,9 @@
   version "6.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-6.0.0-beta.2.tgz#3fb8c783db045848a1b5998bf254767e8ccf6ef5"
 
-"@ngrx/store@6.0.0-beta.2":
-  version "6.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.0.0-beta.2.tgz#cd68d7925a9685ee7095274588e2a94cf30d320a"
+"@ngrx/store@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.0.1.tgz#02c806ce20c698b997e81f5671e0edc07d32cf86"
 
 "@ngtools/webpack@~6.0.3":
   version "6.0.3"
