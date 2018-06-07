@@ -6829,9 +6829,9 @@ ng-router-loader@~2.1.0:
     loader-utils "^0.2.16"
     recast "^0.11.20"
 
-ngx-perfect-scrollbar@~6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/ngx-perfect-scrollbar/-/ngx-perfect-scrollbar-6.0.0.tgz#92b51957c04ed6a6d416beca2707bab005667b68"
+ngx-perfect-scrollbar@~6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/ngx-perfect-scrollbar/-/ngx-perfect-scrollbar-6.2.0.tgz#6c2de8b2c396e60d953a32d2896db0de8658d6e0"
   dependencies:
     perfect-scrollbar "^1.3.0"
     resize-observer-polyfill "^1.4.0"
