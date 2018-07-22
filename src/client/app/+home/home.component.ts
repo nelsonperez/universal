@@ -13,4 +13,10 @@ import { routeAnimation } from '~/app/app.animations';
   animations: [routeAnimation]
 })
 export class HomeComponent extends BaseComponent {
+
+  constructor() {
+    super();
+    console.log('hola mundo 3');
+  }
+
 }

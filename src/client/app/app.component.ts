@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
 // libs
 import { Store } from '@ngrx/store';
 import { ConfigService } from '@ngx-config/core';
-// TODO: ngx-i18n-router
 // import { I18NRouterService } from '@ngx-i18n-router/core';
 
 // framework

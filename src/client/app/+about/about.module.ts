@@ -21,7 +21,6 @@ import { AboutApplePearComponent } from './about-apple-pear.component';
 @NgModule({
   imports: [
     CommonModule,
-    // TODO: ngx-i18n-router
     // I18NRouterModule.forChild(routes, 'about')
     RouterModule.forChild(routes),
     MaterialModule,

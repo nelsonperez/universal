@@ -33,6 +33,7 @@
     ],
     "use-view-encapsulation": false,
     "no-forward-ref": false,
-    "i18n": false
+    "i18n": false,
+    "no-console": [false, "log", "error"]
   }
 }

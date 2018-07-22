@@ -6,7 +6,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { Observable, of as observableOf } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { MetaService } from '@ngx-meta/core';
-// TODO: ngx-i18n-router
 // import { I18NRouterService } from '@ngx-language-router/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -30,7 +29,6 @@ export class I18NService extends Analytics {
   constructor(public analytics: AnalyticsService,
               private readonly store: Store<I18NState>,
               private readonly translate: TranslateService,
-              // TODO: ngx-i18n-router
               // private readonly i18nRouter: I18NRouterService,
               private readonly injector: Injector,
               private readonly win: WindowService,
@@ -51,7 +49,6 @@ export class I18NService extends Analytics {
 
           this.translate.use(res.code);
 
-          // TODO: ngx-i18n-router
           // if (this.availableLanguages.length > 1)
           //   this.i18nRouter.useLanguage(state.code);
         }
@@ -68,7 +65,6 @@ export class I18NService extends Analytics {
       .map(cur => cur.code));
     this.translate.setDefaultLang(this.defaultLanguage.code);
 
-    // TODO: ngx-i18n-router
     // detect language from location/browser (if applicable)
     // let detectedLanguage;
     //
@@ -78,7 +74,6 @@ export class I18NService extends Analytics {
     // if (!detectedLanguage)
     const detectedLanguage = this.getLanguageFromBrowser();
 
-    // TODO: ngx-i18n-router
     // this.i18nRouter.init(this.useLocalizedRoutes);
 
     // set og:locale
@@ -107,7 +102,6 @@ export class I18NService extends Analytics {
       : this.defaultLanguage.code;
   }
 
-  // TODO: ngx-i18n-router
   // private getLanguageFromLocation(url?: string): string {
   //   let res;
   //

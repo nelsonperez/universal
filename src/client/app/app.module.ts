@@ -7,7 +7,6 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 // libs
 import { ConfigLoader, ConfigService } from '@ngx-config/core';
-// TODO: ngx-i18n-router
 // import { I18N_ROUTER_PROVIDERS, I18NRouterLoader, I18NRouterModule, RAW_ROUTES } from '@ngx-i18n-router/core';
 import { MetaLoader } from '@ngx-meta/core';
 import { TranslateLoader, TranslateService } from '@ngx-translate/core';
