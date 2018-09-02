@@ -27,20 +27,9 @@
         Github
     </a>
     <button *ngIf="!isAuthenticated" mat-icon-button [routerLink]="['/', 'login']">
-        <mat-icon>account_circle</mat-icon>
+        <mat-icon>account_circle</mat-icon>Entrar
     </button>
     <button *ngIf="isAuthenticated" mat-icon-button (click)="logout()">
-        <mat-icon>lock_outline</mat-icon>
-    </button>
-    <mat-menu #i18nMenu="matMenu" yPosition="below" xPosition="before" [overlapTrigger]="false">
-        <button mat-menu-item [routerLink]="['/', 'change-language', 'en']">
-            {{ 'PUBLIC.MENU.ENGLISH' | translate }}
-        </button>
-        <button mat-menu-item [routerLink]="['/', 'change-language', 'tr']">
-            {{ 'PUBLIC.MENU.TURKISH' | translate }}
-        </button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="i18nMenu">
-        <mat-icon>language</mat-icon>
+        <mat-icon>lock_outline</mat-icon> Salir
     </button>
 </mat-toolbar>

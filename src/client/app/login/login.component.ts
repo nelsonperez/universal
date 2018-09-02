@@ -20,7 +20,7 @@ import { routeAnimation } from '~/app/app.animations';
   animations: [routeAnimation]
 })
 export class LoginComponent extends BaseComponent implements OnInit {
-  username: string;
+  email: string;
   password: string;
   isProcessing: boolean;
   note$: Observable<string>;
@@ -33,16 +33,19 @@ export class LoginComponent extends BaseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.auth.isAuthenticated)
+    if (this.auth.isAuthenticated) {
+      console.log('Usuaruio logeado');
       this.router.navigateByUrl(this.auth.defaultUrl);
+    }
   }
 
   login(): void {
     this.isProcessing = true;
     this.note$ = this.translate.get('PUBLIC.LOGIN.NOTE');
-
-    this.auth.authenticate(this.username, this.password)
-      .pipe(takeUntil(this.ngUnsubscribe))
+    console.log(this.email, this.password);
+    
+    this.auth.authenticate(this.email, this.password)
+    .pipe(takeUntil(this.ngUnsubscribe))
       .subscribe(() => {
         this.isProcessing = false;
 

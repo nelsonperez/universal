@@ -10,6 +10,7 @@ import { AuthService } from '@ngx-auth/core';
 // framework
 import { BaseComponent } from '~/app/framework/core/core.module';
 import { getWorkingLanguage, Language } from '~/app/framework/i18n/i18n.module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
   isAuthenticated: boolean;
 
   constructor(private readonly store: Store<Language>,
+              public router: Router,
               private readonly config: ConfigService,
               private readonly auth: AuthService) {
     super();
@@ -37,5 +39,7 @@ export class HeaderComponent extends BaseComponent implements OnInit {
 
   logout(): void {
     this.auth.invalidate();
+    this.isAuthenticated = this.auth.isAuthenticated;
+    this.router.navigate(['/']);
   }
 }

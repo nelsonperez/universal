@@ -22,8 +22,6 @@ export class AppComponent extends BaseComponent implements OnInit {
   constructor(private readonly i18nStore: Store<I18NState>,
               private readonly config: ConfigService) {
     super();
-    // TODO: ngx-i18n-router
-    // private readonly i18nRouter: I18NRouterService) {
   }
 
   ngOnInit(): void {

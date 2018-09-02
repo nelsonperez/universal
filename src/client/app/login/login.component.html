@@ -5,7 +5,7 @@
             <form #form="ngForm" autocomplete="off" (ngSubmit)="form.valid && login()">
                 <div class="content" fxLayout="column" fxLayoutAlign="start stretch">
                     <mat-form-field>
-                        <input matInput required type="text" name="username" placeholder="{{ 'PUBLIC.LOGIN.USERNAME' | translate }}" [(ngModel)]="username">
+                        <input matInput required type="text" name="email" placeholder="{{ 'PUBLIC.LOGIN.USERNAME' | translate }}" [(ngModel)]="email">
                     </mat-form-field>
                     <mat-form-field>
                         <input matInput required type="password" name="password" placeholder="{{ 'PUBLIC.LOGIN.PASSWORD' | translate }}" [(ngModel)]="password">
