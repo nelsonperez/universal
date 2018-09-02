@@ -16,7 +16,7 @@ export class HomeComponent extends BaseComponent {
 
   constructor() {
     super();
-    console.log('hola mundo 3');
+    console.log('home');
   }
 
 }

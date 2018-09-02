@@ -7,12 +7,12 @@ import { REQUEST } from '@nguniversal/express-engine/tokens';
 // libs
 import { CACHE } from '@ngx-cache/core';
 import { BrowserCacheModule, MemoryCacheService } from '@ngx-cache/platform-browser';
-import { AuthModule } from '@ngx-auth/core';
+import { AuthLoader, AuthModule, AuthStaticLoader } from '@ngx-auth/core';
+
 import 'hammerjs';
 
 // framework
 import { ConsoleService, CoreModule, WindowService } from '~/app/framework/core/core.module';
-import { AuthTestingModule } from '~/app/framework/auth/testing/auth-testing.module';
 
 // modules & components
 import { AppModule, REQ_KEY } from './app.module';
@@ -29,6 +29,20 @@ export function consoleFactory(): any {
 
 export function requestFactory(transferState: TransferState): any {
   return transferState.get<any>(REQ_KEY, {});
+}
+
+export function authFactory(): AuthLoader {
+
+  return new AuthStaticLoader({
+    backend: {
+      endpoint: 'http://localhost:8080/api/authenticate',
+      params: []
+    },
+    storage: localStorage,
+    storageKey: 'currentUser',
+    loginRoute: ['login'],
+    defaultUrl: 'test'
+  });
 }
 
 @NgModule({
@@ -51,8 +65,10 @@ export function requestFactory(transferState: TransferState): any {
         useFactory: consoleFactory
       }
     ]),
-    AuthModule.forRoot(),
-    AuthTestingModule,
+    AuthModule.forRoot({
+      provide: AuthLoader,
+      useFactory: (authFactory)
+    }),
     AppModule
   ],
   providers: [

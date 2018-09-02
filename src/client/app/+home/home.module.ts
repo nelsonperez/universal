@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 // libs
-// import { I18NRouterModule } from '@ngx-i18n-router/core';
 
 // framework
 import { SharedModule } from '~/app/framework/core/shared.module';
@@ -17,8 +16,6 @@ import { HomeComponent } from './home.component';
 @NgModule({
   imports: [
     CommonModule,
-    // TODO: ngx-i18n-router
-    // I18NRouterModule.forChild(routes, 'home')
     RouterModule.forChild(routes),
     MaterialModule,
     SharedModule

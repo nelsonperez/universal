@@ -1,7 +1,7 @@
 // angular
 import { Inject, Injectable, Injector, PLATFORM_ID } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 
 // libs
@@ -22,6 +22,9 @@ export class UniversalInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const isServer = isPlatformServer(this.platformId);
+    // console.log(isServer);
+    const isAuthtenticateCall = (request.url.split('?')[0].endsWith('/api/authenticate') && request.method === 'POST');
+    // console.log('isAuthtenticateCall', isAuthtenticateCall);
 
     if (isServer && !request.url.includes('http') && request.url.includes('./')) {
       const serverRequest = this.injector.get(REQUEST) as express.Request;
