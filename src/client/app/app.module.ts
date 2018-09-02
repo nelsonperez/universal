@@ -64,17 +64,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
         deps: [HttpClient]
       }
     ]),
-    // TODO: ngx-i18n-router
-    // I18NRouterModule.forRoot(routes, [
-    //   {
-    //     provide: I18NRouterLoader,
-    //     useFactory: i18nRouterFactory,
-    //     deps: [
-    //       ConfigService,
-    //       RAW_ROUTES
-    //     ]
-    //   }
-    // ]),
     AnalyticsModule.forRoot([
       {
         provide: ANGULARTICS2_TOKEN,
@@ -92,7 +81,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     AppComponent
   ],
   providers: [
-    // I18N_ROUTER_PROVIDERS
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
