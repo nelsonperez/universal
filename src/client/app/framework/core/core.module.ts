@@ -9,9 +9,6 @@ import { ConfigLoader, ConfigModule, ConfigService } from '@ngx-config/core';
 import { ConfigHttpLoader } from '@ngx-config/http-loader';
 import { CacheModule } from '@ngx-cache/core';
 import { MetaLoader, MetaModule, MetaStaticLoader } from '@ngx-meta/core';
-// import { I18N_ROUTER_PROVIDERS, I18NRouterLoader } from '@ngx-language-router/core';
-// import { I18NRouterConfigLoader } from '@ngx-language-router/config-loader';
-import { TranslateService } from '@ngx-translate/core';
 
 // module
 import { BaseComponent } from './src/base.component';
@@ -38,9 +35,9 @@ export function configFactory(injector: Injector): ConfigLoader {
 //   return new I18NRouterConfigLoader(config, rawRoutes, 'routes');
 // }
 
-export function metaFactory(config: ConfigService, translate: TranslateService): MetaLoader {
+export function metaFactory(config: ConfigService): MetaLoader {
   return new MetaStaticLoader({
-    callback: (cur: string) => translate.get(cur),
+    callback: (cur: string) => cur,
     pageTitlePositioning: config.getSettings('seo.pageTitlePositioning'),
     pageTitleSeparator: config.getSettings('seo.pageTitleSeparator'),
     applicationName: config.getSettings('system.applicationName'),
@@ -70,7 +67,6 @@ export function metaFactory(config: ConfigService, translate: TranslateService):
   declarations: [BaseComponent],
   providers: [
     CORE_PROVIDERS
-    // I18N_ROUTER_PROVIDERS
   ]
 })
 export class CoreModule {

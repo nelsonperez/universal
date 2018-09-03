@@ -5,14 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // libs
-import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   exports: [
     CommonModule,
     FormsModule,
-    FlexLayoutModule,
-    TranslateModule
+    FlexLayoutModule
   ]
 })
 export class SharedModule {

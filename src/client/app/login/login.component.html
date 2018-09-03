@@ -1,20 +1,18 @@
 ﻿<div class="login">
     <div class="container">
         <div class="mat-elevation-z12">
-            <div class="title">{{ 'PUBLIC.LOGIN.LOG_IN' | translate }}</div>
+            <div class="title">{{ 'PUBLIC.LOGIN.LOG_IN'  }}</div>
             <form #form="ngForm" autocomplete="off" (ngSubmit)="form.valid && login()">
                 <div class="content" fxLayout="column" fxLayoutAlign="start stretch">
                     <mat-form-field>
-                        <input matInput required type="text" name="email" placeholder="{{ 'PUBLIC.LOGIN.USERNAME' | translate }}" [(ngModel)]="email">
+                        <input matInput required type="text" name="email" placeholder="{{ 'PUBLIC.LOGIN.USERNAME'  }}" [(ngModel)]="email">
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput required type="password" name="password" placeholder="{{ 'PUBLIC.LOGIN.PASSWORD' | translate }}" [(ngModel)]="password">
+                        <input matInput required type="password" name="password" placeholder="{{ 'PUBLIC.LOGIN.PASSWORD'  }}" [(ngModel)]="password">
                     </mat-form-field>
                     <button mat-raised-button color="primary" [disabled]="!form.valid || isProcessing">
-                        {{ 'PUBLIC.LOGIN.LOG_IN' | translate }}
+                        {{ 'PUBLIC.LOGIN.LOG_IN'  }}
                     </button>
-                    <p *ngIf="note$ && !warn$" class="note">{{ note$ | async }}</p>
-                    <p *ngIf="warn$" class="warn">{{ warn$ | async }}</p>
                 </div>
             </form>
         </div>

@@ -10,7 +10,15 @@ import { BaseComponent } from '~/app/framework/core/core.module';
   styleUrls: ['main.component.scss']
 })
 export class MainComponent extends BaseComponent {
+
+  showBackToTop: boolean = false;
+
   onActivate(event$: any, scrollContainer: any): void {
     scrollContainer.scrollTop = 0;
   }
+
+  scrollToTop(): void {
+    // TODO: implementar esto
+  }
+
 }

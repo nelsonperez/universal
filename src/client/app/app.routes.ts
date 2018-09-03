@@ -4,9 +4,6 @@ import { Routes } from '@angular/router';
 // libs
 import { MetaGuard } from '@ngx-meta/core';
 
-// framework
-import { ChangeLanguageComponent } from '~/app/framework/i18n/i18n.module';
-
 // components
 import { LoginComponent } from './login/login.component';
 import { MainComponent } from './layout/main.component';
@@ -45,10 +42,6 @@ export const routes: Routes = [
         isRoot: true
       }
     }
-  },
-  {
-    path: 'change-language/:languageCode',
-    component: ChangeLanguageComponent
   },
   {
     path: '**',

@@ -1,6 +1,5 @@
 // angular
 import { Injector, NgModule } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { BrowserModule, makeStateKey } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
@@ -8,7 +7,6 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 // libs
 import { ConfigLoader, ConfigService } from '@ngx-config/core';
 import { MetaLoader } from '@ngx-meta/core';
-import { TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { ANGULARTICS2_TOKEN } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { PERFECT_SCROLLBAR_CONFIG, PerfectScrollbarConfigInterface, PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -18,7 +16,6 @@ import { configFactory, CoreModule, metaFactory } from '~/app/framework/core/cor
 import { SharedModule } from '~/app/framework/core/shared.module';
 import { HttpInterceptorModule } from '~/app/framework/http/http-interceptor.module';
 import { MaterialModule } from '~/app/framework/material/material.module';
-import { ChangeLanguageComponent, I18NModule, translateFactory } from '~/app/framework/i18n/i18n.module';
 import { AnalyticsModule } from '~/app/framework/analytics/analytics.module';
 
 // module
@@ -49,19 +46,12 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
       {
         provide: MetaLoader,
         useFactory: metaFactory,
-        deps: [ConfigService, TranslateService]
+        deps: [ConfigService]
       }
     ]),
     SharedModule,
     HttpInterceptorModule,
     MaterialModule,
-    I18NModule.forRoot([
-      {
-        provide: TranslateLoader,
-        useFactory: translateFactory,
-        deps: [HttpClient]
-      }
-    ]),
     AnalyticsModule.forRoot([
       {
         provide: ANGULARTICS2_TOKEN,
@@ -87,7 +77,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     }
   ],
   exports: [AppComponent],
-  entryComponents: [ChangeLanguageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
