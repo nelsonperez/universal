@@ -1,4 +1,46 @@
-﻿<mat-toolbar class="mat-elevation-z2" color="primary">
+﻿<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutAlign="space-between center" class="logo-toolbar theme-container">
+        <span fxHide="false" fxHide.gt-sm>
+            <button mat-button (click)="sidenavmenu.toggle()" class="sidenav-toggle">
+                <mat-icon>menu</mat-icon>
+            </button>
+        </span>
+        <a fxFlex class="logo" routerLink="/" (click)="closeSubMenus()">
+            Alquiler entre particulares.
+        </a>
+        <div class="search" fxFlex="50%" fxFlex.gt-sm="50%" fxShow="false" fxShow.gt-sm>
+            <form method="get" class="search-form" fxLayout="row">
+
+                <input type="text" placeholder="Buscar producto, servicio, marca..." fxFlex>
+                <button mat-raised-button [matMenuTriggerFor]="provinciasMenu" #categoriesMenuTrigger="matMenuTrigger"
+                    type="button" class="mat-elevation-z0 categories provincias-menu text-truncate text-muted">
+                    en Todas las provincias
+                    <mat-icon>arrow_drop_down</mat-icon>
+                </button>
+                <mat-menu #provinciasMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="categories-dropdown">
+                    <span>
+                        Mendoza
+                    </span>
+                </mat-menu>
+                <button mat-mini-fab (click)="search()" type="button" class="search-btn mat-elevation-z0 text-muted">
+                    <mat-icon>search</mat-icon>
+                </button>
+            </form>
+        </div>
+        <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayoutAlign="center center">
+                <a mat-button routerLink="/sign-in">
+                    <span>Crear cuenta</span>
+                </a>
+                <a mat-button routerLink="/login">
+                    <span>Ingresar</span>
+                </a>
+            </div>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- mat-toolbar class="mat-elevation-z2" color="primary">
     <span>
         <mat-icon class="icon">developer_board</mat-icon>
         <span class="title">Octopus</span>
@@ -32,4 +74,4 @@
     <button *ngIf="isAuthenticated" mat-icon-button (click)="logout()">
         <mat-icon>lock_outline</mat-icon> Salir
     </button>
-</mat-toolbar>
+</mat-toolbar -->

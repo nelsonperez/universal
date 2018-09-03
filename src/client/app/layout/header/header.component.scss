@@ -1,3 +1,18 @@
-.icon {
-  vertical-align: middle;
+.logo {
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-indent: -999px;
+  left: 10px;
+  outline: 0;
+  background-image: url('/assets/images/portal-logo-160px.png');
+  width: 100%;
+  margin-right: 20px;
+}
+
+.logo-toolbar.mat-toolbar-row {
+  min-height: 85px !important;
+}
+
+.provincias-menu {
+  border-left: 1px solid black;
 }

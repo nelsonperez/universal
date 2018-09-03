@@ -26,6 +26,8 @@ import { LoginComponent } from '~/app/login/login.component';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 import { AppSettings } from '~/app/app.settings';
+import { SidenavMenuComponent } from '~/app/layout/sidenav-menu/sidenav-menu.component';
+import { AppService } from './app.service';
 
 export const REQ_KEY = makeStateKey<string>('req');
 
@@ -66,11 +68,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     HeaderComponent,
     FooterComponent,
     MainComponent,
+    SidenavMenuComponent,
     LoginComponent,
     AppComponent
   ],
   providers: [
     AppSettings,
+    AppService,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
