@@ -1,13 +1,8 @@
 
 @import '~@angular/material/theming';
 @include mat-core();
-@import "skins/blue";
-//@include angular-material-theme($octopus-theme);
-
+$octopus-primary: mat-palette($mat-orange, 900, 100, 500);
+$octopus-accent: mat-palette($mat-grey, 300, 300, 700);
+$octopus-warn: mat-palette($mat-red, 500, A200, 800);
 $font-family: Roboto, sans-serif;
 $theme-max-width: 1400px;
-$primary: map-get($blue-theme, primary);
-$accent: map-get($blue-theme, accent);
-$warn: map-get($blue-theme, warn);
-$background: map-get($blue-theme, background);
-$foreground: map-get($blue-theme, foreground);

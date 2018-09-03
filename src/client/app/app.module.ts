@@ -7,7 +7,6 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 
 // libs
 import { ConfigLoader, ConfigService } from '@ngx-config/core';
-// import { I18N_ROUTER_PROVIDERS, I18NRouterLoader, I18NRouterModule, RAW_ROUTES } from '@ngx-i18n-router/core';
 import { MetaLoader } from '@ngx-meta/core';
 import { TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { ANGULARTICS2_TOKEN } from 'angulartics2';
@@ -29,6 +28,7 @@ import { MainComponent } from '~/app/layout/main.component';
 import { LoginComponent } from '~/app/login/login.component';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
+import { AppSettings } from '~/app/app.settings';
 
 export const REQ_KEY = makeStateKey<string>('req');
 
@@ -36,7 +36,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({appId: 'my-app-id'}),
+    BrowserModule.withServerTransition({ appId: 'my-app-id' }),
     TransferHttpCacheModule,
     RouterModule.forRoot(routes),
     PerfectScrollbarModule,
@@ -49,10 +49,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
       {
         provide: MetaLoader,
         useFactory: metaFactory,
-        deps: [
-          ConfigService,
-          TranslateService
-        ]
+        deps: [ConfigService, TranslateService]
       }
     ]),
     SharedModule,
@@ -83,6 +80,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
     AppComponent
   ],
   providers: [
+    AppSettings,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
@@ -92,5 +90,4 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {suppr
   entryComponents: [ChangeLanguageComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

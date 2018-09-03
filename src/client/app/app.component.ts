@@ -13,15 +13,25 @@ import { I18NState, Init } from '~/app/framework/i18n/i18n.module';
 // styles
 import '~/assets/sass/lib.scss';
 import '~/assets/sass/styles.scss';
+import { AppSettings } from '~/app/app.settings';
+import { Settings } from '~/app/models/index';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent extends BaseComponent implements OnInit {
-  constructor(private readonly i18nStore: Store<I18NState>,
-              private readonly config: ConfigService) {
+
+  loading = false;
+  settings: Settings;
+
+  constructor(
+    public appSettings: AppSettings,
+    private readonly i18nStore: Store<I18NState>,
+    private readonly config: ConfigService
+  ) {
     super();
+    this.settings = this.appSettings.settings;
   }
 
   ngOnInit(): void {
