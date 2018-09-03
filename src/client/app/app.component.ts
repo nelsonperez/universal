@@ -12,7 +12,7 @@ import { I18NState, Init } from '~/app/framework/i18n/i18n.module';
 
 // styles
 import '~/assets/sass/lib.scss';
-import '~/assets/sass/layout.scss';
+import '~/assets/sass/styles.scss';
 
 @Component({
   selector: 'app-root',
